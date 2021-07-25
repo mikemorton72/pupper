@@ -14,7 +14,7 @@ class PuppiesController < ApplicationController
     if puppy.save
       render json: puppy.as_json
     else
-      render json: {errors: puppy.errors.full_messages}
+      render json: {errors: puppy.errors.full_messages}, status: :unprocessable_entity
     end
   end
 end
