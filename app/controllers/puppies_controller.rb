@@ -31,5 +31,14 @@ class PuppiesController < ApplicationController
       render json: {errors: puppy.errors.full_messages}, status: :unprocessable_entity
     end
   end
-  
+
+  def destroy
+    puppy = Puppy.find_by(id: params[:id])
+    if puppy.destroy
+      render json: {message: "#{puppy.name} was destroyed"}
+    else
+      render json: {message: "puppy not found"}
+    end
+  end
+
 end

@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get "/puppies/:id" => "puppies#show"
   post "puppies" => "puppies#create"
   patch "puppies/:id" => "puppies#update"
+  delete "puppies/:id" => "puppies#destroy"
 
 end
